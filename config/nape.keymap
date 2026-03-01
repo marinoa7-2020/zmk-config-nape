@@ -224,5 +224,10 @@
             bindings = <&kp ESCAPE>;
             key-positions = <0 1>;
         };
+
+        combo-enter {
+            bindings = <&kp ENTER>;
+            key-positions = <0 1>;
+        };
     };
 };
