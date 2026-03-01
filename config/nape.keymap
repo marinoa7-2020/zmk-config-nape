@@ -7,13 +7,18 @@
 #include <dt-bindings/zmk/pointing.h>
 
 /* マウス設定の再定義（警告回避のため include の後に記述） */
+
 #undef ZMK_POINTING_DEFAULT_MOVE_VAL
+
 #define ZMK_POINTING_DEFAULT_MOVE_VAL 800
+
 #undef ZMK_POINTING_DEFAULT_SCRL_VAL
+
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 120
 
 / {
     /* RGB LED Widget用のエイリアス設定 */
+
     aliases {
         led-red = &led0;
         led-green = &led1;
@@ -43,6 +48,7 @@
             compatible = "zmk,behavior-sensor-rotate-var";
             #sensor-binding-cells = <2>;
             bindings = <&mmv>, <&mmv>;
+
             tap-ms = <10>;
         };
 
@@ -50,12 +56,14 @@
             compatible = "zmk,behavior-sensor-rotate-var";
             #sensor-binding-cells = <2>;
             bindings = <&msc>, <&msc>;
+
             tap-ms = <10>;
         };
 
         lt_mkp: lt_mkp {
             compatible = "zmk,behavior-hold-tap";
             bindings = <&mo>, <&mkp>;
+
             #binding-cells = <2>;
             tapping-term-ms = <200>;
         };
@@ -63,6 +71,7 @@
         mod_mkp: mod_mkp {
             compatible = "zmk,behavior-hold-tap";
             bindings = <&kp>, <&mkp>;
+
             #binding-cells = <2>;
             tapping-term-ms = <200>;
         };
@@ -72,86 +81,134 @@
         compatible = "zmk,keymap";
 
         // レイヤー0（0°）
+
         orientation0_layer {
-            bindings = <&lt_mkp 10 MB3  &mkp MB2  &mkp MB1  &mo 8  &mo 9  &mo 11>;
+            bindings = <
+&lt_mkp 10 MB3  &mkp MB2  &mkp MB1  &mo 8  &mo 9  &mo 11
+            >;
         };
 
         // レイヤー1（45°）
+
         orientation45_layer {
-            bindings = <&lt_mkp 10 MB3  &mkp MB2  &mkp MB1  &mo 8  &mo 9  &mo 11>;
+            bindings = <
+&lt_mkp 10 MB3  &mkp MB2  &mkp MB1  &mo 8  &mo 9  &mo 11
+            >;
         };
 
         // レイヤー2（90°）
+
         orientation90_layer {
-            bindings = <&lt_mkp 10 MB3  &mkp MB2  &mkp MB1  &mo 8  &mo 9  &mo 11>;
+            bindings = <
+&lt_mkp 10 MB3  &mkp MB2  &mkp MB1  &mo 8  &mo 9  &mo 11
+            >;
         };
 
         // レイヤー3（135°）
+
         orientation135_layer {
-            bindings = <&lt_mkp 10 MB3  &mkp MB2  &mkp MB1  &mo 8  &mo 9  &mo 11>;
+            bindings = <
+&lt_mkp 10 MB3  &mkp MB2  &mkp MB1  &mo 8  &mo 9  &mo 11
+            >;
         };
 
         // レイヤー4（180°）
+
         orientation180_layer {
-            bindings = <&lt_mkp 10 MB3  &mkp MB2  &mkp MB1  &mo 8  &mo 9  &mo 11>;
+            bindings = <
+&lt_mkp 10 MB3  &mkp MB2  &mkp MB1  &mo 8  &mo 9  &mo 11
+            >;
         };
 
         // レイヤー5（225°）
+
         orientation225_layer {
-            bindings = <&lt_mkp 10 MB3  &mkp MB2  &mkp MB1  &mo 8  &mo 9  &mo 11>;
+            bindings = <
+&lt_mkp 10 MB3  &mkp MB2  &mkp MB1  &mo 8  &mo 9  &mo 11
+            >;
         };
 
         // レイヤー6（270°）
+
         orientation270_layer {
-            bindings = <&lt_mkp 10 MB3  &mkp MB2  &mkp MB1  &mo 8  &mo 9  &mo 11>;
+            bindings = <
+&lt_mkp 10 MB3  &mkp MB2  &mkp MB1  &mo 8  &mo 9  &mo 11
+            >;
         };
 
         // レイヤー7（315°）
+
         orientation315_layer {
-            bindings = <&lt_mkp 10 MB3  &mkp MB2  &mkp MB1  &mo 8  &mo 9  &mo 11>;
+            bindings = <
+&lt_mkp 10 MB3  &mkp MB2  &mkp MB1  &mo 8  &mo 9  &mo 11
+            >;
         };
 
         // レイヤー8（Bluetooth選択）
+
         btsel_layer {
-            bindings = <&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &trans  &bt BT_SEL 3  &bt BT_SEL 4>;
+            bindings = <
+&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &trans  &bt BT_SEL 3  &bt BT_SEL 4
+            >;
         };
 
         // レイヤー9（Bluetoothクリア）
+
         btclr_layer {
-            bindings = <&none  &none  &none  &bt BT_CLR  &none  &bt BT_CLR_ALL>;
+            bindings = <
+&none  &none  &none  &bt BT_CLR  &none  &bt BT_CLR_ALL
+            >;
         };
 
         // レイヤー10（スクロール）
+
         scroll_layer {
-            bindings = <&mkp MB3  &mkp MB4  &mkp MB5  &trans  &trans  &trans>;
-            sensor-bindings = <&mouse_scrl SCRL_DOWN SCRL_UP>, <&mouse_scrl SCRL_UP SCRL_DOWN>;
+            bindings = <
+&mkp MB3  &mkp MB4  &mkp MB5  &trans  &trans  &trans
+            >;
+
+            sensor-bindings =
+                <&mouse_scrl SCRL_DOWN SCRL_UP>,
+                <&mouse_scrl SCRL_UP SCRL_DOWN>;
         };
 
         // レイヤー11（向き選択）
+
         orientation_layer {
-            bindings = <&to 2  &to 4  &to 6  &to 0  &to 5  &trans>;
+            bindings = <
+&to 2  &to 4  &to 6  &to 0  &to 5  &trans
+            >;
         };
     };
 
     combos {
         compatible = "zmk,combos";
+
         combo_layer9 {
             bindings = <&mo 10>;
             key-positions = <1 2>;
             timeout-ms = <50>;
         };
+
         combo_esc {
             bindings = <&kp ESCAPE>;
-            key-positions = <0 1>;
+            key-positions = <0 2>;
         };
+
         combo_enter {
             bindings = <&kp ENTER>;
             key-positions = <0 1>;
+        };
+
+        combo-del {
+            bindings = <&kp DELETE>;
+            key-positions = <0 1 2>;
         };
     };
 };
 
 /* マウス移動とスクロールのハードウェア設定 */
+
 &mmv {
     delay-ms = <0>;
     trigger-period-ms = <10>;
