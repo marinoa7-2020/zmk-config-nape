@@ -30,6 +30,13 @@
     acceleration-exponent = <0>;  // 加速なし
 };
 
+// 追加：LEDのエイリアス定義
+    aliases {
+        led-red = &led0;
+        led-green = &led1;
+        led-blue = &led2;
+    };
+
 // 入力プロセッサーの設定
 
 / {
